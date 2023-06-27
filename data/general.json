@@ -1,0 +1,32 @@
+{
+    "categorias":[
+        {
+            "id":1,
+            "name":"Frutas"
+        },
+        {
+            "id":2,
+            "name":"Verduras"
+        },
+        {
+            "id":3,
+            "name":"Cárnicos"
+        },
+        {
+            "id":4,
+            "name":"Lácteos"
+        }
+    ],
+
+
+    "tipos":[
+        {
+            "id":1,
+            "name":"Orgánico"
+        },
+        {
+            "id":2,
+            "name":"No Orgánico"
+        }
+    ]
+}
