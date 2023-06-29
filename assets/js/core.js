@@ -37,13 +37,14 @@ function GetProductos() {
         .then(response => response.json())
         .then(data => {
             arraProductos = data.products;
-            GenerateListProduct();
+            GenerateListProduct(arraProductos);
         });
 }
 
-function GenerateListProduct() {
+//FUNCION QUE GENERA EL LISTADO DE PRODUCTOS
+function GenerateListProduct(arraProd) {
     let htmlProducto = ``;
-    arraProductos.forEach(element => {
+    arraProd.forEach(element => {
         htmlProducto += `
                         <tr>
                             <td>${element.id}</td>
@@ -74,6 +75,20 @@ function GetTypeName(id) {
             nameType = "" + element.name;
         }
     });
-
     return nameType;
+}
+
+function FilterTable(){
+
+    //CAPTURAR LA INFORMACIÓN QUE SE VA A FILTRAR
+    let nameList=document.getElementById("nameList").value;
+    let categoryList=document.getElementById("categoryList").value;
+    let typeList=document.getElementById("typeList").value;    
+    
+    let arraProductsFilters=arraProductos.filter( item=>item.name==nameList || 
+                                                  item.cagetory_id==categoryList || 
+                                                  item.type_id==typeList);
+    GenerateListProduct(arraProductsFilters);
+    
+
 }
